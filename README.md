@@ -1,14 +1,20 @@
-# Hack4Retail round 2
+# [Hack4Retail](https://hack4retail.fozzy.ua/) round 2
+
+<p align="center">
+  <img src="https://github.com/Yalikesifulei/hack4retail/blob/main/img/hack4retail.jpg"/>
+</p>
 
 "Tsina Tyzhnia" team solution for the final round of Hack4Retail Hackathon.
 
-Achieved 1st place on the private leaderboard and 4th on the public.
+🥇 Achieved **1st place on the private leaderboard** and 4th on the public.
 
 ## Task
 
 **Optimize darkstore items placing**
 
-![darkstore map](img/darkstore_map.jpg)
+<p align="center">
+  <img src="https://github.com/Yalikesifulei/hack4retail/blob/main/img/darkstore_map.jpg" style="width: 50%;" />
+</p>
 
 _1 big cell = 4 small cells = 2 m_
 
@@ -40,9 +46,9 @@ We assume that the items in the cell never end.
 
 At first, we created a function that computes travel and picking time for the given set of cheques: for each cheque, it computes picking time by multiplying level pick-up time and amount of items that should be picked, and the travel time by moving to the nearest section from cheque each turn. Sections and levels are taken from the current darkstore map.
 
-Actually, our function somewhat differs from the one used on the leaderboard - it sometimes returns a higher time for some of the cheques. But on average it still correlated with LB, so we decide to keep it. 
+Actually, our function somewhat differs from the one used on the leaderboard — it sometimes returns a higher time for some of the cheques. But on average it still correlated with LB, so we decide to keep it. 
 
-_For travel time computing we used a distance matrix of the darkstore - we created it by hands, but in general, it should be created from the given layout with some algorithms like bfs_.
+_For travel time computing we used a distance matrix of the darkstore — we created it by hands, but in general, it should be created from the given layout with some algorithms like bfs_.
 
 ### Baseline
 
@@ -60,7 +66,7 @@ The basis of our solution was two-step ranging by the linear combination of item
 
 ### Genetic Algorithms
 
-Our final solution was found by the genetic algorithms, using placing we received with ranging as a starting point.
+Our final solution was found by the [genetic algorithms](https://github.com/Yalikesifulei/hack4retail/blob/main/Fine-tuning%20with%20Genetic.ipynb), using placing we received with ranging as a starting point.
 
 ### Other
 
@@ -68,28 +74,17 @@ We also tried to use the Apriori algorithm to find relations between different i
 
 ## Notebooks & Files
 
-- `Validation & notes.ipynb` - validation scheme, approaches scoring, and some other experiments
-ating a ranging by features with Optuna
+- [`Validation & notes.ipynb`](https://github.com/Yalikesifulei/hack4retail/blob/main/Validation%20%26%20notes.ipynb) — validation scheme, approaches scoring, and some other experiments
 
-- `Fine-tuning with Genetic.ipynb` - creating the final submission
+- [`optuna-linear-ranging.ipynb`](https://github.com/Yalikesifulei/hack4retail/blob/main/optuna-linear-ranging.ipynb) — creating a ranging by features with Optuna
 
-- `input/`
-  - `cheques_public.csv` - historical data given by organizers
-  - `darkstore_map.csv` - sample submission
-  - `darkstore.csv` - darkstore distance matrix, created by us
+- [`Fine-tuning with Genetic.ipynb`](https://github.com/Yalikesifulei/hack4retail/blob/main/Fine-tuning%20with%20Genetic.ipynb) — creating the final submission with custom-written genetic algorithm.
 
-- `submissions/` - this folder contains both of our submissions and their results given by organizers
-  - `validation_submission/` - our baseline
-  - `final_submission/` - ranging + genetic alghorithms
-- `optuna-linear-ranging.ipynb` - creating a ranging by features with Optuna
+- [`input/`](https://github.com/Yalikesifulei/hack4retail/tree/main/input)
+  - [`cheques_public.csv`](https://github.com/Yalikesifulei/hack4retail/blob/main/input/cheques_public.csv) — historical data given by organizers
+  - [`darkstore.csv`](https://github.com/Yalikesifulei/hack4retail/blob/main/input/darkstore.csv) — darkstore distance matrix, created by us
+  - [`darkstore_map.csv`](https://github.com/Yalikesifulei/hack4retail/blob/main/input/darkstore_map.csv) — sample submission
 
-- `Fine-tuning with Genetic.ipynb` - creating the final submission
-
-- `input/`
-  - `cheques_public.csv` - historical data given by organizers
-  - `darkstore_map.csv` - sample submission
-  - `darkstore.csv` - darkstore distance matrix, created by us
-
-- `submissions/` - this folder contains both of our submissions and their results given by organizers
-  - `validation_submission/` - our baseline
-  - `final_submission/` - ranging + genetic alghorithms
+- [`submissions/`](https://github.com/Yalikesifulei/hack4retail/tree/main/submissions) — this folder contains both of our submissions and their results given by organizers
+  - [`validation_submission/`](https://github.com/Yalikesifulei/hack4retail/tree/main/submissions/validation_submission) — our baseline
+  - [`final_submission/`](https://github.com/Yalikesifulei/hack4retail/tree/main/submissions/final_submission) — ranging + genetic alghorithms
