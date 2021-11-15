@@ -4,9 +4,10 @@
   <img src="https://github.com/Yalikesifulei/hack4retail/blob/main/img/hack4retail.jpg"/>
 </p>
 
-"Tsina Tyzhnia" team solution for the final round of Hack4Retail Hackathon.
+«Tsina Tyzhnia» team solution for the final round of Hack4Retail Hackathon. 
+Teammates: [Andrii Samoshyn](https://github.com/samoshyn), [Andrii Yerko](https://github.com/andrii0yerko), [Oleksii Galganov](https://github.com/yalikesifulei), [Sofia Shaposhnikova](https://github.com/teasotea).
 
-🥇 Achieved **1st place on the private leaderboard** and 4th on the public.
+🥇 Achieved **1st place on the private leaderboard** and 4th on the public. There is also a [presentation](https://github.com/Yalikesifulei/hack4retail/blob/main/Tsina%20Tyzhnia.pdf) of our approach.
 
 ## Task
 
